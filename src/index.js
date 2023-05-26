@@ -2,14 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import i18n from './utils/i18nextt'; /* very important */
 import { BrowserRouter } from 'react-router-dom';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </BrowserRouter>
+  <React.StrictMode>
+      <BrowserRouter>
+        <ErrorBoundary>
+            <App />  
+        </ErrorBoundary>
+      </BrowserRouter>
+  </React.StrictMode>
 );
 
